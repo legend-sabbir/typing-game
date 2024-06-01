@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --accent-color: #E2B613;
+  --secondary-color: #2D2E32;
+  --primary-color: #646569;
+  --bg-color: #333438;
+  --error-color: #ca4753;
+  --error-extra-color: #7e2a33;
+  
+  --primary-text-color: whitesmoke;
+  
+  --fs-1: clamp(1.8rem, 1rem + 5vw, 7rem);
+  --fs-2: clamp(0.9rem, 0.3rem + 2.4vw, 3.5rem);
+  /*--fs-2: clamp(0.8rem, 0.2rem + 2.4vw, 3.5rem);*/
+  --fs-3: clamp(0.2rem, 0.2rem + 1.6vw, 0.95rem);
+  --line-height: 2.4;
+  
+  --ff-roboto-mono: 'Roboto Mono', monospace;
+  --ff-lexend-deca: 'Lexend Deca', sans-serif;
+}
+
+body {
+  font-family: var(--ff-roboto-mono);
+  color: var(--fg-100);
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html,
+body { height: 100%; }
+
+button {
+  font: inherit;
+  color: inherit;
+  font-family: var(--ff-lexend-deca);
+  background: none;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:hover { color: var(--primary-text-color) }
+
+#app {
+  position: relative;
+  margin-inline: auto;
+  padding: 1rem;
+  width: 100%;
+}
+
+@media only screen and (min-width: 375px) {
+  #app { max-width: 90% }
+}
+
+@media only screen and (min-width: 550px) {
+  #app { max-width: 85% }
+}
+
+@media only screen and (min-width: 1400px) {
+  #app {
+    width: 80%;
+    max-width: 1500px 
+  }
+}
