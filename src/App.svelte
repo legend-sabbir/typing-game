@@ -112,7 +112,7 @@
   
   function translateContainer() {
     const currentWord = wordsEl.children[wordIndex];
-    if (currentWord.offsetTop < currentWord.offsetHeight * 2) {
+    if (currentWord.offsetTop < currentWord.offsetHeight) {
       wordsEl.parentElement.scrollTop = 0
     } else {
       wordsEl.parentElement.scrollTop = currentWord.offsetTop - currentWord.offsetHeight
