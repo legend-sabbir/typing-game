@@ -62,14 +62,12 @@
     tick().then(moveCursor);
     
     lastSelctionStart = inputEl.selectionStart;
-    
     !timerId && startGameTimer();
   }
   
   function setLetter() {
     const currentExpectedWordLen = wordsArr[wordIndex].length;
-    
-    if (pressedKey === "backspace" && currentExpectedWordLen < renderArr[wordIndex].length) {
+    if (pressedKey === "backspace" && renderArr[wordIndex].length !== inputWordsArr[wordIndex].length && currentExpectedWordLen < renderArr[wordIndex].length) {
       let charectersRemoved = lastSelctionStart - inputEl.selectionStart;
       const maxRemoveAble = renderArr[wordIndex].length - currentExpectedWordLen
       if (charectersRemoved > maxRemoveAble) charectersRemoved = maxRemoveAble;
@@ -80,6 +78,7 @@
     if (!extraWord || pressedKey === "backspace") return
     
     if (pressedKey.length > currentExpectedWordLen) {
+      // find better solution
       renderArr[wordIndex] = wordsArr[wordIndex] + pressedKey.substring(currentExpectedWordLen);
     } else {
       renderArr[wordIndex] += pressedKey
@@ -254,6 +253,7 @@
     background: none;
     transform: translateY(-50%);
     resize: none;
+    pointer-events: none;
     outline: var(--primary-color);
   }
   

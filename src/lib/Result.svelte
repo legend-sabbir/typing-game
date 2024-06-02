@@ -11,7 +11,7 @@
   
   onMount(() => {
     $wpm = result.wpm
-    $acc = result.acc
+    $acc = isNaN(result.acc) ? 0 : result.acc
     setTimeout(() => dispatch("resultShown"), 2500);
   }, 0);
 </script>
